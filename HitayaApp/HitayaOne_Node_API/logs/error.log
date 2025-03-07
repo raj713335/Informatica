@@ -1,0 +1,15 @@
+2023-06-17 12:12:46:1246 [31merror[39m: [31mdatabase connection error MongoServerError: bad auth : authentication failed[39m
+2023-06-17 12:13:38:1338 [31merror[39m: [31mdatabase connection error MongoServerError: bad auth : authentication failed[39m
+2023-06-19 22:26:36:2636 [31merror[39m: [31mjwt expired[39m
+2023-06-19 22:38:02:382 [31merror[39m: [31mCast to ObjectId failed for value "{ userDetailId: new ObjectId("648ea400a8fa753d8f7c995b") }" (type Object) at path "_id" for model "KnownHealthConditions"[39m
+2023-06-19 22:38:18:3818 [31merror[39m: [31mCast to ObjectId failed for value "{ userDetailId: new ObjectId("648ea400a8fa753d8f7c995b") }" (type Object) at path "_id" for model "KnownHealthConditions"[39m
+2023-06-24 10:57:08:578 [31merror[39m: [31mjwt expired[39m
+2023-06-24 11:06:58:658 [31merror[39m: [31mjwt expired[39m
+2023-06-24 11:27:15:2715 [31merror[39m: [31mjwt expired[39m
+2023-06-24 11:27:22:2722 [31merror[39m: [31mjwt malformed[39m
+2023-07-17 13:56:38:5638 [31merror[39m: [31mjwt expired[39m
+2023-07-17 13:56:38:5638 [31merror[39m: [31mjwt expired[39m
+2023-07-17 13:56:43:5643 [31merror[39m: [31mjwt malformed[39m
+2023-07-17 13:56:43:5643 [31merror[39m: [31mjwt malformed[39m
+2023-07-17 13:56:47:5647 [31merror[39m: [31mjwt malformed[39m
+2023-07-17 13:56:47:5647 [31merror[39m: [31mjwt malformed[39m

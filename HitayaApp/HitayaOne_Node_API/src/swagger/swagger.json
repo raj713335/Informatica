@@ -1,0 +1,190 @@
+{
+    "openapi": "3.0.0",
+  "info": {
+    "description": "HitayaOne REST API using Node Js, Express, Typescript, MongoDB",
+    "version": "1.0.0",
+    "title": "HitayaOne",
+    "termsOfService": "http://hitayaone.cm/terms/",
+    "contact": {
+      "name": "API Support",
+      "email": "support@hitayaone.com",
+      "url": "http://hitayaone.com/support"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+    "servers": [
+        {
+          "url": "http://api.hitayaone.com/api/v1",
+          "description": "Main (production) server"
+        },
+        {
+            "url": "http://localhost:5000/api/v1",
+            "description": "development server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "user",
+            "description": "Access to User related API"
+        }
+    ],
+    "paths": {
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "Logs user into the system",
+                "description": "",
+                "operationId": "loginUser",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "userName",
+                        "in": "query",
+                        "description": "The user name for login",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "The password for login in clear text",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "headers": {
+                            "X-Expires-After": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "date in UTC when token expires"
+                            },
+                            "X-Rate-Limit": {
+                                "type": "integer",
+                                "format": "int32",
+                                "description": "calls per hour allowed by the user"
+                            }
+                        },
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid username/password supplied"
+                    }
+                }
+            }
+        },
+        "/user": {
+            "get": {
+                "tags": [
+                    "user"
+                ],
+                "summary": "get the details of logged in user",
+                "description": "This can only be done by the logged in user.",
+                "operationId": "userdetails",
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GeneralError": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "message": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Category": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Tag": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "skipParam": {
+                "name": "skip",
+                "in": "query",
+                "description": "number of items to skip",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            },
+            "limitParam": {
+                "name": "limit",
+                "in": "query",
+                "description": "max records to return",
+                "required": true,
+                "schema": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "responses": {
+            "NotFound": {
+                "description": "Entity not found."
+            },
+            "IllegalInput": {
+                "description": "Illegal input for operation."
+            },
+            "GeneralError": {
+                "description": "General Error",
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/GeneralError"
+                        }
+                    }
+                }
+            }
+        },
+        "securitySchemes": {}
+    }
+}

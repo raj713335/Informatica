@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  app:
+    build: 
+      context: "../../../HitayaOne_Node_API"
+      dockerfile: "docker/oneApi/Dockerfile"
+    volumes:
+      - ../../../HitayaOne_Node_API:/core
+    ports:
+      - 3200:3200
+    image: one_api_node:node
+    container_name: one_api_node
+    command: npm start
+    env_file:
+      - ../../.env
