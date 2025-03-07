@@ -1,0 +1,7 @@
+{
+  "name": "HitayaOne",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

@@ -1,0 +1,65 @@
+::placeholder {
+  color: #d6d6d6 !important;
+}
+
+.popover {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.popover .popover-header {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: rgba(13, 110, 253, 0.1);
+}
+
+.popover .popover-body {
+  font-family: "Inter";
+  color: #6c757d;
+}
+
+.auth-bg {
+  content: "";
+  background: url("../../assets/images/auth-background.png") no-repeat center;
+  background-color: #f7f7f7;
+  background-size: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  pointer-events: none;
+  background-size: cover;
+  opacity: 0.1;
+}
+
+.divider-text {
+  text-transform: uppercase;
+  color: #9093c1;
+  margin: 1.5rem 0;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-gap: 1rem;
+}
+
+.divider-text::before,
+.divider-text::after {
+  content: "";
+  border-bottom: 1px solid #dedede;
+  -webkit-transform: translateY(-1px);
+  -moz-transform: translateY(-1px);
+  -ms-transform: translateY(-1px);
+  transform: translateY(-1px);
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+.divider-text {
+  color: #8a8a8a;
+}

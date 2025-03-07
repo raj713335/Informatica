@@ -1,0 +1,33 @@
+.card-link {
+  text-decoration: none;
+  border-bottom: 4px solid #eaeaea;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-link:hover {
+  border-color: #ff627699;
+  background-color: #ff627605;
+}
+
+.card-link > .card-body > .heading {
+  text-decoration: none;
+}
+
+.card-link > .card-body > .description {
+  text-decoration: none;
+}
+
+.card-link .more-btn {
+  color: #ff6276;
+  margin-bottom: 0;
+}
+
+.card-link .more-btn > i {
+  transition: all 0.18s ease-in-out;
+  visibility: hidden;
+}
+
+.card-link:hover .more-btn > i {
+  padding-left: 12px;
+  visibility: visible;
+}
